@@ -1,0 +1,40 @@
+<h1 class="title-small">🤖 AI Team Builder</h1>
+
+<div class="team-container">
+
+<div class="team">
+
+<h2>Team 1</h2>
+
+<ul>
+
+{% for p in team1 %}
+
+<li>{{ p.name }} - {{ p.skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+<div class="team">
+
+<h2>Team 2</h2>
+
+<ul>
+
+{% for p in team2 %}
+
+<li>{{ p.name }} - {{ p.skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+<a href="/dashboard">Back</a>

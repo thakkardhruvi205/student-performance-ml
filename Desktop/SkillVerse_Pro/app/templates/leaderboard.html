@@ -1,0 +1,38 @@
+<h1 class="title-small">🏆 Leaderboard</h1>
+
+<table class="leaderboard">
+
+<tr>
+<th>Rank</th>
+<th>Email</th>
+<th>Skill</th>
+<th>Score</th>
+</tr>
+
+{% for s in scores %}
+
+<tr>
+
+<td>
+
+{% if loop.index == 1 %}
+🥇
+{% elif loop.index == 2 %}
+🥈
+{% elif loop.index == 3 %}
+🥉
+{% else %}
+{{ loop.index }}
+{% endif %}
+
+</td>
+
+<td>{{ s.email }}</td>
+<td>{{ s.skill }}</td>
+<td>{{ s.score }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>

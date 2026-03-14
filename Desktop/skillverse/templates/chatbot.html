@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+
+<div class="container mt-5">
+    <div class="card p-4 shadow-lg">
+        <h3 class="text-center text-info">SkillVerse AI Assistant 🤖</h3>
+        <hr>
+
+        <form method="POST">
+            <div class="input-group">
+                <input type="text" name="message" class="form-control" placeholder="Ask something..." required>
+                <button class="btn btn-primary">Send</button>
+            </div>
+        </form>
+
+        <br>
+
+        {% if response %}
+            <div class="alert alert-success">
+                <strong>AI:</strong> {{ response }}
+            </div>
+        {% endif %}
+
+        {% if image_taken %}
+            <p>Webcam Image Captured:</p>
+            <img src="/static/captured.jpg" width="300">
+        {% endif %}
+
+        <a href="/dashboard" class="btn btn-secondary mt-3">Back</a>
+    </div>
+</div>
+
+</body>
+</html>

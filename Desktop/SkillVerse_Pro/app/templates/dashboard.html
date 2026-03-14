@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>SkillVerse Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo-small">SkillVerse</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/leaderboard">Leaderboard</a>
+<a href="/team">Team</a>
+</div>
+
+</div>
+
+
+<!-- DASHBOARD HEADER -->
+
+<section class="dashboard">
+
+<h1 class="dashboard-title">
+SkillVerse AI Dashboard
+</h1>
+
+<p class="dashboard-desc">
+Track your learning progress and achievements
+</p>
+
+</section>
+
+
+<!-- SCORE CARDS -->
+
+<section class="score-cards">
+
+<div class="score-card">
+<h3>Skill Score</h3>
+<p class="score">92</p>
+</div>
+
+<div class="score-card">
+<h3>Quizzes Completed</h3>
+<p class="score">18</p>
+</div>
+
+<div class="score-card">
+<h3>Leaderboard Rank</h3>
+<p class="score">#4</p>
+</div>
+
+</section>
+
+
+<!-- CHARTS -->
+
+<section class="charts">
+
+<div class="chart-box">
+<canvas id="skillChart"></canvas>
+</div>
+
+<div class="chart-box">
+<canvas id="progressChart"></canvas>
+</div>
+
+</section>
+
+
+<!-- BADGES -->
+
+<section class="badges">
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="badge-grid">
+
+<div class="badge">🥇 Python Master</div>
+<div class="badge">🤖 AI Explorer</div>
+<div class="badge">💻 Web Builder</div>
+<div class="badge">🧠 Quiz Champion</div>
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+© 2026 SkillVerse — AI Learning Platform
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+
+</body>
+</html>

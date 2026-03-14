@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaderboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='skillverse-ui.css') }}">
+</head>
+<body style="padding:40px;">
+<h2>Leaderboard</h2>
+<table>
+<tr><th>Email</th><th>Score</th><th>Badge</th></tr>
+{% for user in users %}
+<tr>
+<td>{{ user["email"] }}</td>
+<td>{{ user["score"] }}</td>
+<td>
+{% if user["score"] >= 80 %}🥇
+{% elif user["score"] >= 60 %}🥈
+{% else %}🥉{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

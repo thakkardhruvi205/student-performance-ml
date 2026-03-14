@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>SkillVerse</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo-small">SkillVerse</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/leaderboard">Leaderboard</a>
+<a href="/team">Team</a>
+</div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1 class="logo">SkillVerse</h1>
+
+<h2 class="tagline">
+Your Gateway to Skills and Talent Growth
+</h2>
+
+<p class="subline">
+Explore skills, challenge yourself with AI quizzes,
+build teams and climb the leaderboard.
+</p>
+
+<div class="buttons">
+<a href="/login" class="btn">Login</a>
+<a href="/register" class="btn">Register</a>
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="card">
+<h3>AI Quiz</h3>
+<p>Smart quizzes powered by AI</p>
+</div>
+
+<div class="card">
+<h3>Leaderboard</h3>
+<p>Compete with other students</p>
+</div>
+
+<div class="card">
+<h3>Team Builder</h3>
+<p>Create teams and collaborate</p>
+</div>
+
+</section>
+
+
+
+<!-- SKILL PROGRESS -->
+
+<section class="progress-section">
+
+<h2 class="section-title">Skill Progress</h2>
+
+<div class="progress-container">
+
+<div class="progress-card">
+<p>Python</p>
+<div class="progress-bar">
+<div class="progress python"></div>
+</div>
+</div>
+
+<div class="progress-card">
+<p>Machine Learning</p>
+<div class="progress-bar">
+<div class="progress ml"></div>
+</div>
+</div>
+
+<div class="progress-card">
+<p>Web Development</p>
+<div class="progress-bar">
+<div class="progress web"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- AI SKILL RECOMMENDER -->
+
+<section class="ai-section">
+
+<h2 class="section-title">AI Skill Recommender</h2>
+
+<p class="ai-desc">
+Tell us your interest and SkillVerse will recommend skills
+</p>
+
+<div class="ai-box">
+
+<input id="interest" placeholder="Enter interest (AI, coding...)">
+
+<button onclick="recommendSkill()" class="ai-btn">
+Recommend
+</button>
+
+</div>
+
+<div id="result" class="ai-result"></div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+© 2026 SkillVerse — Your Gateway to Skills and Talent Growth
+
+</footer>
+
+
+
+<!-- PARTICLES -->
+
+<script>
+
+particlesJS("particles-js",{
+
+particles:{
+number:{value:80},
+size:{value:3},
+color:{value:"#6c8cff"},
+line_linked:{enable:true,color:"#6c8cff"},
+move:{speed:2}
+}
+
+});
+
+</script>
+
+
+
+<!-- AI RECOMMENDER -->
+
+<script>
+
+function recommendSkill(){
+
+let interest=document.getElementById("interest").value.toLowerCase();
+let result=document.getElementById("result");
+
+if(interest.includes("ai"))
+result.innerHTML="Recommended: Artificial Intelligence";
+
+else if(interest.includes("data"))
+result.innerHTML="Recommended: Data Science";
+
+else if(interest.includes("web"))
+result.innerHTML="Recommended: Web Development";
+
+else if(interest.includes("security"))
+result.innerHTML="Recommended: Cyber Security";
+
+else
+result.innerHTML="Recommended: Start with Python Programming";
+
+}
+
+</script>
+
+
+
+<!-- CHATBOT -->
+
+<div class="chatbot-button" onclick="toggleChat()">💬</div>
+
+<div class="chat-container" id="chatContainer">
+
+<div class="chat-header">
+SkillVerse AI
+<span onclick="toggleChat()">✖</span>
+</div>
+
+<div class="chat-body" id="chatBody">
+<div class="bot-message">
+Hello 👋 Ask me about skills!
+</div>
+</div>
+
+<div class="chat-input">
+
+<input id="userInput" placeholder="Ask something...">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleChat(){
+
+let chat=document.getElementById("chatContainer");
+
+chat.style.display = chat.style.display==="flex" ? "none" : "flex";
+
+}
+
+
+function sendMessage(){
+
+let input=document.getElementById("userInput");
+
+let text=input.value;
+
+if(text==="") return;
+
+let chatBody=document.getElementById("chatBody");
+
+chatBody.innerHTML+=
+"<div class='user-message'>"+text+"</div>";
+
+let reply="Try learning Python or Data Science.";
+
+if(text.includes("ai"))
+reply="You should learn Artificial Intelligence.";
+
+if(text.includes("web"))
+reply="Web Development is a great skill.";
+
+chatBody.innerHTML+=
+"<div class='bot-message'>"+reply+"</div>";
+
+input.value="";
+
+chatBody.scrollTop=chatBody.scrollHeight;
+
+}
+
+</script>
+
+
+</body>
+</html>
