@@ -34,3 +34,26 @@ ai-smart-inventory-system
 │
 ├── package.json
 └── README.md
+
+## How to Run the Project
+
+1. Clone the repository
+
+git clone https://github.com/thakkardhruvi205/ai-smart-inventory-system.git
+
+
+2. Install dependencies
+
+
+3. Run the server
+
+4. 
+4. Open the frontend
+Open `index.html` in your browser.
+
+## Author
+Dhruvi Thakkar  
+B.Sc Data Science – Indus University
+
+## GitHub Repository
+https://github.com/thakkardhruvi205/ai-smart-inventory-system
